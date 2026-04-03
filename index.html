@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOFERT - Pupuk Organik Terbaik</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">🌱 ECOFERT</div>
+        <div class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="pesanan.html">Pesanan</a>
+            <a href="profil.html">Profil</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Pupuk Organik <span>ECOFERT</span></h1>
+        <p>100% alami, fermentasi berkualitas, nutrisi lengkap!</p>
+        <a href="https://wa.me/628123456789" class="cta-btn">📱 Order WhatsApp</a>
+    </header>
+
+    <section class="features">
+        <div class="feature">
+            <h3>✨ 100% Organik</h3>
+            <p>Tanpa bahan kimia berbahaya</p>
+        </div>
+        <div class="feature">
+            <h3>🔬 Fermentasi</h3>
+            <p>Proses alami 30 hari</p>
+        </div>
+        <div class="feature">
+            <h3>🍽️ Nutrisi Lengkap</h3>
+            <p>NPK + mikro lengkap</p>
+        </div>
+    </section>
+
+    <section class="products">
+        <h2>🌿 Produk ECOFERT</h2>
+        <div class="product-grid">
+            <div class="product" onclick="addToCart('Pupuk Padat 1kg', 15000)">
+                <img src="https://via.placeholder.com/300x200/4CAF50/fff?text=1kg" alt="Pupuk Padat">
+                <h3>Pupuk Padat Organik</h3>
+                <p>1 kg - Fermentasi alami</p>
+                <div class="price">Rp15.000</div>
+                <button>+ Tambah</button>
+            </div>
+            <div class="product" onclick="addToCart('Pupuk Padat 5kg', 75000)">
+                <img src="https://via.placeholder.com/300x200/8BC34A/fff?text=5kg" alt="Pupuk Padat">
+                <h3>Pupuk Padat Organik</h3>
+                <p>5 kg - Hemat beli banyak</p>
+                <div class="price">Rp75.000</div>
+                <button>+ Tambah</button>
+            </div>
+            <div class="product" onclick="addToCart('Pupuk Cair 1L', 30000)">
+                <img src="https://via.placeholder.com/300x200/2E7D32/fff?text=1L" alt="Pupuk Cair">
+                <h3>Pupuk Cair Organik</h3>
+                <p>1 liter - Langsung semprot</p>
+                <div class="price">Rp30.000</div>
+                <button>+ Tambah</button>
+            </div>
+        </div>
+        <div class="cart">
+            <span id="cart-count">0</span> item di keranjang
+            <button onclick="viewCart()">Lihat Keranjang</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
