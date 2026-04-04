@@ -2,73 +2,116 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ECOFERT - Pupuk Organik Terbaik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>ESCOFERT - Pupuk Organik Berkualitas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#2D6A2B">
+    <meta name="description" content="ESCOFERT ECOCYCLE FERTILIZER - Pupuk organik 100% alami hasil fermentasi 30 hari">
+    <meta name="keywords" content="pupuk organik, pupuk alami, ESCOFERT, pupuk padat, pupuk cair">
+    <meta name="author" content="ESCOFERT">
+    <meta name="robots" content="index, follow">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-brand">🌱 ECOFERT</div>
-        <div class="nav-links">
-            <a href="index.html">Beranda</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="pesanan.html">Pesanan</a>
-            <a href="profil.html">Profil</a>
-        </div>
-    </nav>
+<div class="header">
+    <div class="header-left">
+        <img src="logo.jpg" class="header-logo" onerror="this.src='https://via.placeholder.com/40'">
+        <h1>ESCOFERT ECOCYCLE</h1>
+    </div>
+    <div class="header-right">
+        <button class="header-cart-btn" onclick="viewCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="headerCartCount" data-count="0">0</span>
+        </button>
+    </div>
+</div>
 
-    <header class="hero">
-        <h1>Pupuk Organik <span>ECOFERT</span></h1>
-        <p>100% alami, fermentasi berkualitas, nutrisi lengkap!</p>
-        <a href="https://wa.me/628123456789" class="cta-btn">📱 Order WhatsApp</a>
-    </header>
+<div class="container">
+    <div class="hero">
+        <h1>Pupuk Organik <span>ESCOFERT</span></h1>
+        <p>100% alami, fermentasi berkualitas, nutrisi lengkap untuk tanaman subur dan sehat!</p>
+        <a href="https://wa.me/628211951858" class="btn-wa" target="_blank">
+            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+        </a>
+    </div>
 
-    <section class="features">
-        <div class="feature">
-            <h3>✨ 100% Organik</h3>
-            <p>Tanpa bahan kimia berbahaya</p>
-        </div>
-        <div class="feature">
-            <h3>🔬 Fermentasi</h3>
-            <p>Proses alami 30 hari</p>
-        </div>
-        <div class="feature">
-            <h3>🍽️ Nutrisi Lengkap</h3>
-            <p>NPK + mikro lengkap</p>
-        </div>
-    </section>
+    <h3>✨ Keunggulan ESCOFERT</h3>
+    <div class="keunggulan-grid">
+        <div class="keunggulan-item"><i class="fas fa-leaf"></i><h4>100% Organik</h4><p>Tanpa kimia berbahaya</p></divmnj        <div class="keunggulan-item"><i class="fas fa-flask"></i><h4>Fermentasi Alami</h4><p>30 hari proses matang</p></div>
+        <div class="keunggulan-item"><i class="fas fa-seedling"></i><h4>Nutrisi Lengkap</h4><p>NPK + mikro lengkap</p></div>
+        <div class="keunggulan-item"><i class="fas fa-water"></i><h4>Mudah Digunakan</h4><p>Langsung tabur/semprot</p></div>
+        <div class="keunggulan-item"><i class="fas fa-coins"></i><h4>Harga Terjangkau</h4><p>Hemat hingga 50%</p></div>
+    </div>
 
-    <section class="products">
-        <h2>🌿 Produk ECOFERT</h2>
-        <div class="product-grid">
-            <div class="product" onclick="addToCart('Pupuk Padat 1kg', 15000)">
-                <img src="https://via.placeholder.com/300x200/4CAF50/fff?text=1kg" alt="Pupuk Padat">
-                <h3>Pupuk Padat Organik</h3>
-                <p>1 kg - Fermentasi alami</p>
-                <div class="price">Rp15.000</div>
-                <button>+ Tambah</button>
-            </div>
-            <div class="product" onclick="addToCart('Pupuk Padat 5kg', 75000)">
-                <img src="https://via.placeholder.com/300x200/8BC34A/fff?text=5kg" alt="Pupuk Padat">
-                <h3>Pupuk Padat Organik</h3>
-                <p>5 kg - Hemat beli banyak</p>
-                <div class="price">Rp75.000</div>
-                <button>+ Tambah</button>
-            </div>
-            <div class="product" onclick="addToCart('Pupuk Cair 1L', 30000)">
-                <img src="https://via.placeholder.com/300x200/2E7D32/fff?text=1L" alt="Pupuk Cair">
-                <h3>Pupuk Cair Organik</h3>
-                <p>1 liter - Langsung semprot</p>
-                <div class="price">Rp30.000</div>
-                <button>+ Tambah</button>
+    <h3>📦 Produk Kami</h3>
+    
+    <div class="product-card">
+        <div class="product-image">
+            <img src="pupuk-padat-1kg.jpg" onerror="this.src='https://via.placeholder.com/300x180?text=Pupuk+Padat+1kg'">
+            <div class="product-icon-overlay padat"><i class="fas fa-mountain"></i></div>
+        </div>
+        <div class="product-detail">
+            <h3>Pupuk Padat Organik</h3><p>1 kg - Fermentasi alami 30 hari</p>
+            <div class="product-price">Rp15.000</div>
+            <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('padat1', -1)">-</button>
+                <span id="padat1Qty">1</span>
+                <button class="qty-btn" onclick="changeQty('padat1', 1)">+</button>
+                <button class="btn-add" onclick="addToCart('padat1')"><i class="fas fa-plus"></i> Tambah</button>
             </div>
         </div>
-        <div class="cart">
-            <span id="cart-count">0</span> item di keranjang
-            <button onclick="viewCart()">Lihat Keranjang</button>
-        </div>
-    </section>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="product-card">
+        <div class="product-image">
+            <img src="pupuk-padat-5kg.jpg" onerror="this.src='https://via.placeholder.com/300x180?text=Pupuk+Padat+5kg'">
+            <div class="product-icon-overlay padat"><i class="fas fa-mountain"></i></div>
+        </div>
+        <div class="product-detail">
+            <h3>Pupuk Padat Organik</h3><p>5 kg - Hemat beli banyak</p>
+            <div class="product-price">Rp75.000</div>
+            <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('padat5', -1)">-</button>
+                <span id="padat5Qty">1</span>
+                <button class="qty-btn" onclick="changeQty('padat5', 1)">+</button>
+                <button class="btn-add" onclick="addToCart('padat5')"><i class="fas fa-plus"></i> Tambah</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-image">
+            <img src="cair.jpg" onerror="this.src='https://via.placeholder.com/300x180?text=Pupuk+Cair+1L'">
+            <div class="product-icon-overlay cair"><i class="fas fa-tint"></i></div>
+        </div>
+        <div class="product-detail">
+            <h3>Pupuk Cair Organik</h3><p>1 liter - Langsung semprot daun</p>
+            <div class="product-price">Rp30.000</div>
+            <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('cair', -1)">-</button>
+                <span id="cairQty">1</span>
+                <button class="qty-btn" onclick="changeQty('cair', 1)">+</button>
+                <button class="btn-add" onclick="addToCart('cair')"><i class="fas fa-plus"></i> Tambah</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-nav">
+    <a href="index.html" class="nav-item active"><i class="fas fa-home"></i><span>Beranda</span></a>
+    <a href="dashboard.html" class="nav-item"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
+    <a href="pesanan.html" class="nav-item"><i class="fas fa-receipt"></i><span>Pesanan</span></a>
+    <a href="profil.html" class="nav-item"><i class="fas fa-user"></i><span>Profil</span></a>
+</div>
+
+<div style="text-align: center; padding: 10px; background: white; border-top: 1px solid #eee;">
+    <a href="admin-login.html" style="color: #999; font-size: 11px; text-decoration: none;">
+        <i class="fas fa-shield-alt"></i> Admin Panel
+    </a>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,28 +1,16 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - ECOFERT</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Dashboard - ESCOFERT</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
 <body>
-    <nav class="navbar">
-        <div class="nav-brand">🌱 ECOFERT</div>
-        <div class="nav-links">
-            <a href="index.html">Beranda</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="pesanan.html">Pesanan</a>
-            <a href="profil.html">Profil</a>
-        </div>
-    </nav>
-    <div style="padding: 4rem; text-align: center;">
-        <h1>📊 Dashboard Penjual</h1>
-        <p>Analytics, pesanan, stok produk</p>
-        <div style="margin-top: 2rem;">
-            <h2>Total Penjualan: Rp 15.750.000</h2>
-            <p>Pesanan Hari Ini: 23</p>
-        </div>
-    </div>
-</body>
-</html>
+<div class="header"><div class="header-left"><img src="logo.jpg" class="header-logo" onerror="this.src='https://via.placeholder.com/40'"><h1>ESCOFERT ECOCYCLE</h1></div><div class="header-right"><button class="header-cart-btn" onclick="viewCart()"><i class="fas fa-shopping-cart"></i><span id="headerCartCount">0</span></button></div></div>
+<div class="container"><div class="hero" style="padding:25px;"><h1>Dashboard <span>Anda</span></h1><p>Pantau aktivitas belanja Anda</p></div>
+<div class="stats-grid"><div class="stat-card"><i class="fas fa-shopping-cart"></i><div class="stat-value" id="totalOrders">0</div><div class="stat-label">Total Pesanan</div></div><div class="stat-card"><i class="fas fa-coins"></i><div class="stat-value" id="totalSpent">Rp0</div><div class="stat-label">Total Belanja</div></div><div class="stat-card"><i class="fas fa-box"></i><div class="stat-value" id="totalItems">0</div><div class="stat-label">Produk Dibeli</div></div></div>
+<h3>📋 Pesanan Terbaru</h3><div id="recentOrders" style="margin-bottom:20px;"><p style="text-align:center; color:#666;">Belum ada pesanan</p></div></div>
+<div class="bottom-nav"><a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>Beranda</span></a><a href="dashboard.html" class="nav-item active"><i class="fas fa-chart-line"></i><span>Dashboard</span></a><a href="pesanan.html" class="nav-item"><i class="fas fa-receipt"></i><span>Pesanan</span></a><a href="profil.html" class="nav-item"><i class="fas fa-user"></i><span>Profil</span></a></div>
+<div style="text-align:center; padding:10px; background:white; border-top:1px solid #eee;"><a href="admin-login.html" style="color:#999; font-size:11px; text-decoration:none;"><i class="fas fa-shield-alt"></i> Admin Panel</a></div>
+<div class="toast" id="toast"></div><script src="script.js"></script>
+<script>
+function loadUserDashboard(){let orders=JSON.parse(localStorage.getItem('escfert_orders'))||[];let totalSpent=0,totalItems=0;orders.forEach(order=>{totalSpent+=order.total||0;for(let id in order.items){totalItems+=order.items[id].qty}});document.getElementById('totalOrders').textContent=orders.length;document.getElementById('totalSpent').textContent='Rp'+totalSpent.toLocaleString();document.getElementById('totalItems').textContent=totalItems;let recentHtml='';let recentOrders=orders.slice(-5).reverse();if(recentOrders.length>0){recentOrders.forEach(order=>{let date=new Date(order.date).toLocaleDateString('id-ID');recentHtml+=`<div style="background:white; padding:12px; border-radius:12px; margin-bottom:10px; display:flex; justify-content:space-between;"><div><strong>${order.id}</strong><div style="font-size:12px; color:#666;">${date}</div></div><div style="text-align:right;"><div style="font-weight:bold; color:#2D6A2B;">Rp${(order.total||0).toLocaleString()}</div><div style="font-size:11px; color:#999;">${order.status||'Menunggu'}</div></div></div>`})}else{recentHtml='<p style="text-align:center; color:#666;">Belum ada pesanan</p>'}document.getElementById('recentOrders').innerHTML=recentHtml}
+document.addEventListener('DOMContentLoaded',loadUserDashboard);</script>
+<style>.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:30px;}.stat-card{background:white;padding:15px 10px;border-radius:16px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.08);}.stat-card i{font-size:28px;color:#4CAF50;margin-bottom:8px;}.stat-value{font-size:20px;font-weight:800;color:#2D6A2B;}.stat-label{font-size:11px;color:#666;margin-top:4px;}</style>
+</body></html>

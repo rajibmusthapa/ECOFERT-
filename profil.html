@@ -1,28 +1,16 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil - ECOFERT</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Profil - ESCOFERT</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
 <body>
-    <nav class="navbar">
-        <div class="nav-brand">🌱 ECOFERT</div>
-        <div class="nav-links">
-            <a href="index.html">Beranda</a>
-            <a href="dashboard.html">Profil</a>
-            <a href="pesanan.html">Pesanan</a>
-            <a href="profil.html">Profil</a>
-        </div>
-    </nav>
-    <div style="padding: 4rem; text-align: center;">
-        <h1>👤 Profil Penjual</h1>
-        <p>Profil, pesanan, stok produk</p>
-        <div style="margin-top: 2rem;">
-            <h2>Total Penjualan: Rp 15.750.000</h2>
-            <p>Pesanan Hari Ini: 23</p>
-        </div>
-    </div>
-</body>
-</html>
+<div class="header"><div class="header-left"><img src="logo.jpg" class="header-logo" onerror="this.src='https://via.placeholder.com/40'"><h1>ESCOFERT ECOCYCLE</h1></div><div class="header-right"><button class="header-cart-btn" onclick="viewCart()"><i class="fas fa-shopping-cart"></i><span id="headerCartCount">0</span></button></div></div>
+<div class="container"><div class="hero" style="padding:25px;"><h1>Profil <span>Toko</span></h1><p>Informasi lengkap ESCOFERT ECOCYCLE</p></div>
+<div style="background:white; border-radius:20px; padding:25px; text-align:center; margin-bottom:20px;"><img src="logo.jpg" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:15px;border:3px solid #4CAF50;" onerror="this.src='https://via.placeholder.com/100'"><h2 style="color:#2D6A2B;">ESCOFERT ECOCYCLE</h2><p style="color:#666; margin-bottom:20px;">Pupuk Organik Berkualitas Tinggi</p><div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;"><div><i class="fas fa-map-marker-alt" style="color:#4CAF50;"></i> <span style="font-size:13px;">Indonesia</span></div><div><i class="fab fa-whatsapp" style="color:#4CAF50;"></i> <span style="font-size:13px;">+62 821-1951-858</span></div><div><i class="far fa-clock" style="color:#4CAF50;"></i> <span style="font-size:13px;">24 Jam Nonstop</span></div></div></div>
+<div style="background:white; border-radius:20px; padding:15px; margin-bottom:20px;"><h3 style="text-align:left; margin:0 0 15px 0; font-size:18px;">Menu Lainnya</h3><div onclick="clearMyData()" style="display:flex; align-items:center; gap:15px; padding:12px 0; border-bottom:1px solid #eee; cursor:pointer;"><i class="fas fa-trash-alt" style="color:#ff4444; width:24px;"></i><span style="flex:1;">Hapus Data Saya</span><i class="fas fa-chevron-right" style="color:#ccc;"></i></div><div onclick="shareApp()" style="display:flex; align-items:center; gap:15px; padding:12px 0; cursor:pointer;"><i class="fas fa-share-alt" style="color:#2196F3; width:24px;"></i><span style="flex:1;">Bagikan Aplikasi</span><i class="fas fa-chevron-right" style="color:#ccc;"></i></div></div>
+<div style="background:white; border-radius:20px; padding:20px;"><h3 style="text-align:left; margin:0 0 10px 0; font-size:18px;">Tentang ESCOFERT</h3><p style="color:#666; line-height:1.6;">ESCOFERT ECOCYCLE FERTILIZER adalah pupuk organik berkualitas tinggi yang diproduksi melalui proses fermentasi alami selama 30 hari. Kami berkomitmen menyediakan pupuk terbaik untuk pertanian Indonesia.</p><p style="text-align:center; margin-top:15px; font-size:11px; color:#aaa;">Version 3.0.0</p></div></div>
+<div class="bottom-nav"><a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>Beranda</span></a><a href="dashboard.html" class="nav-item"><i class="fas fa-chart-line"></i><span>Dashboard</span></a><a href="pesanan.html" class="nav-item"><i class="fas fa-receipt"></i><span>Pesanan</span></a><a href="profil.html" class="nav-item active"><i class="fas fa-user"></i><span>Profil</span></a></div>
+<div style="text-align:center; padding:10px; background:white; border-top:1px solid #eee;"><a href="admin-login.html" style="color:#999; font-size:11px; text-decoration:none;"><i class="fas fa-shield-alt"></i> Admin Panel</a></div>
+<div class="toast" id="toast"></div><script src="script.js"></script>
+<script>
+function clearMyData(){if(confirm('⚠️ Hapus semua riwayat pesanan Anda? Data tidak dapat dikembalikan!')){localStorage.removeItem('escfert_orders');localStorage.removeItem('escfert_cart');showToast('Data Anda telah dihapus','warning');setTimeout(()=>location.reload(),1500);}}
+function shareApp(){if(navigator.share){navigator.share({title:'ESCOFERT ECOCYCLE',text:'Pupuk Organik Berkualitas Tinggi',url:window.location.href});}else{prompt('Salin link ini untuk berbagi:',window.location.href);}}
+</script></body></html>
